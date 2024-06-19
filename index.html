@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+    background: linear-gradient(to right, #232526, #414345, #232526, #414345);
+
+
+background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@keyframes Gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+        .container {
+            margin-top: 50px;
+            padding-bottom: 60px;
+        }
+        .header {
+            text-align: left;
+            margin-bottom: 50px;
+        }
+        .form-group {
+            margin-bottom: 30px;
+        }
+        .btn {
+            width: 100%;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .result h2 {
+            font-size: 1.5rem;
+        }
+        .error {
+            color: red;
+        }
+        footer {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Fake News Detector</h1>
+        </div>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="url">Enter News URL</label>
+                <input type="url" name="url" id="url" class="form-control" placeholder="Enter article URL here...">
+            </div>
+            <div class="form-group">
+                <label for="text">Enter News Article Text Here</label>
+                <textarea name="text" id="text" rows="1" class="form-control" placeholder="Enter news article text here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+    <footer>
+        <h4>NIFDANCE Powered by @ByteDance</h4>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
